@@ -1,0 +1,51 @@
+dn: dc=anhdungpham,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: anhdungpham
+o: AnhDungPham
+
+dn: ou=people,dc=anhdungpham,dc=com
+objectclass: top
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=anhdungpham,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: groups
+
+dn: uid=ldap_anh,ou=people,dc=anhdungpham,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Anh Pham
+sn: Pham
+givenName: Anh Pham
+mail: anh@gmail.com
+uid: ldap_anh
+userPassword: {SHA}jLIjfQZ5yojbZGTqxg2pY0VROWQ=
+
+dn: uid=ldap_pham,ou=people,dc=anhdungpham,dc=com
+objectClass: inetOrgPerson
+cn: Dung Pham
+sn: Pham
+givenName: Dung Pham
+mail: pham@gmail.com
+uid: ldap_pham
+userPassword: {SHA}jLIjfQZ5yojbZGTqxg2pY0VROWQ=
+
+dn: cn=admin,ou=groups,dc=anhdungpham,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admins
+uniqueMember: uid=ldap_anh,ou=people,dc=anhdungpham,dc=com
+
+dn: cn=user,ou=groups,dc=anhdungpham,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: users
+uniqueMember: uid=ldap_anh,ou=people,dc=anhdungpham,dc=com
+uniqueMember: uid=ldap_pham,ou=people,dc=anhdungpham,dc=com
+
